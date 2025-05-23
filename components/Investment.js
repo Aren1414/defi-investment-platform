@@ -34,4 +34,4 @@ export default function InvestmentPage() {
       {message && <p>{message}</p>}
     </div>
   );
-      }
+}
