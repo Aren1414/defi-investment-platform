@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import investmentContract from "../utils/contract";
-import web3 from "../utils/web3";
+import Web3 from "https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js";
 
 export default function InvestmentPage() {
   const [amount, setAmount] = useState("");
@@ -9,10 +9,10 @@ export default function InvestmentPage() {
   const handleInvest = async () => {
     setMessage("Processing investment...");
     try {
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await Web3.eth.getAccounts();
       await investmentContract.methods.invest().send({
         from: accounts[0],
-        value: web3.utils.toWei(amount, "ether"),
+        value: Web3.utils.toWei(amount, "ether"),
       });
       setMessage("Investment successful!");
     } catch (error) {
