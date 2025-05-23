@@ -1,4 +1,4 @@
-import Web3 from "web3";
+import Web3 from "https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js";
 
 let web3;
 
